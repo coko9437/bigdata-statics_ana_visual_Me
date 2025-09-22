@@ -26,7 +26,7 @@ import pandas as pd
 # encoding="utf-8": 한글이 깨지지 않도록 설정합니다.
 # index_col=0: 파일의 첫 번째 열을 데이터의 인덱스(고유 번호)로 사용합니다.
 # header=0: 파일의 첫 번째 행을 컬럼(열) 이름으로 사용합니다.
-CB = pd.read_csv("./CoffeeBean_before.csv", encoding="utf-8", index_col=0, header=0, engine="python")
+CB = pd.read_csv("CoffeeBean_before.csv", encoding="utf-8", index_col=0, header=0, engine="python")
 
 # CB 데이터의 맨 위 5줄을 미리 봅니다.
 CB.head()
@@ -37,10 +37,10 @@ addr = []
 
 # CB 데이터의 'address' 컬럼에 있는 모든 주소를 하나씩 꺼내 반복합니다.
 for address in CB.address:
-  # 각 주소(문자열)를 띄어쓰기(' ')를 기준으로 단어들로 쪼갭니다.
-  # 예: "서울시 강남구 논현로 566" -> ["서울시", "강남구", "논현로", "566"]
-  # 쪼갠 결과를 addr 리스트에 추가합니다.
-  addr.append(str(address).split())
+    # 각 주소(문자열)를 띄어쓰기(' ')를 기준으로 단어들로 쪼갭니다.
+    # 예: "서울시 강남구 논현로 566" -> ["서울시", "강남구", "논현로", "566"]
+    # 쪼갠 결과를 addr 리스트에 추가합니다.
+    addr.append(str(address).split())
 
 # addr 리스트에 결과가 잘 담겼는지 확인합니다.
 print(addr)
